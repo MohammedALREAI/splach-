@@ -6,11 +6,36 @@ import Tooltip from '@mui/material/Tooltip'
 import Popover from '@mui/material/Popover'
 
 import { Typography } from '../widget/Typography'
+import { Column } from '../widget/Column'
+import { CSSProperties } from 'styled-components'
+
+
+
+const style1:CSSProperties = {
+    background: 'red',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+}
 
 export const ImageInfo = () => {
     return (
-        <Row>
+        <Row style={style1}>
             <Row>
+                <Column>
+                <p>Views</p>
+                <p>--</p>
+                </Column>
+                <Column>
+                <p>Downloads</p>
+                <p>240</p>
+                </Column>
+                <Column>
+                <p>Featured in</p>
+                <p>Editorial</p>
+                </Column>
+            </Row>
+            <Row JC='flex-end' margin={'10px'} >
             <Button variant='outlined' startIcon={<ReplyIcon />}>
             Share
             </Button>
@@ -30,16 +55,6 @@ export const ImageInfo = () => {
                        <Button color='error'>Report</Button>
                    </Tooltip>
                 </Popover>
-            </Row>
-            <Row>
-                <Typography>Views</Typography>
-                <Typography>Downloads</Typography>
-                <Typography>Featured in</Typography>
-            </Row>
-            <Row>
-                <Typography>--</Typography>
-                <Typography>240</Typography>
-                <Typography>Editorial</Typography>
             </Row>
         </Row>
     )
