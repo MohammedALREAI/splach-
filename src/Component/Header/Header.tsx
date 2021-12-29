@@ -1,7 +1,5 @@
 import { NavLinkA } from '../widget/Nav/NavLinkA'
 import { NavLinkWrapper } from '../widget/Nav/NavLinkWrapper'
-import { Image } from '../widget/Image'
-import unSplash from '../../../public/unsplash.png'
 
 
 export const Header = ({}) => {

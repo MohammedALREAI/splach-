@@ -1,13 +1,14 @@
 import styled from 'styled-components'
-import { General } from '../styles.interface'
+import { Row } from '../Row'
 
 
 console.log('navWrapper')
-export const NavLinkWrapper = styled('ul')`
-align-items: center;
-background-color: red;
-display: flex;
+export const NavLinkWrapper = styled(Row)`
+    align-items: center;
+    background-color: red;
+    display: flex;
     flex: 1;
+    height: 50px;
     justify-content: center;
     list-style: none;
     li:not(:last-child) {
