@@ -1,4 +1,8 @@
+
+
+
 {
+
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -33,24 +37,5 @@
         }
       }
     ],
-    "baseUrl": "src",
-    "paths": {
-      "src/*": ["*"],
-      "@/Component/*": ["Component/*"],
-      "@/Const/*": ["Const/*"],
-      "@/Hoc/*": ["Hoc/*"],
-      "@/Layout/*": ["Layout/*"],
-      "@/Pages/*": ["Pages/*"] ,
-      "@/Redux/*": ["Redux/*"] ,
-      "@/Theme/*": ["Theme/*"] ,
-      "@/Utils/*": ["Utils/*"] ,
-    
-    
-    }
-  },
-  "include": [
-    "src",
-    "**/*.ts",
-    "**/*.d.ts"
-  ]
-}
+    "baseUrl": "src"
+  }}
