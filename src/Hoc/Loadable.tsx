@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import React, { Suspense, LazyExoticComponent, ComponentType } from 'react'
-import { SpinnerContainer } from '../Component/widget/SpinnerContainer'
-
+import React, { Suspense, LazyExoticComponent, ComponentType } from "react";
+import { SpinnerContainer } from "../Component/widget/SpinnerContainer";
 
 //-----------------------|| LOADABLE - LAZY LOADING ||-----------------------//
 
-interface LoaderProps{
-}
-const Loadable = (Component: LazyExoticComponent<() => JSX.Element> | ComponentType<React.ReactNode>) => (props: LoaderProps) => (
-    <Suspense fallback={<SpinnerContainer />}>
+interface LoaderProps {}
+const Loadable =
+  (Component: LazyExoticComponent<() => JSX.Element> | ComponentType<React.ReactNode>) =>
+  (props: LoaderProps) =>
+    (
+      <Suspense fallback={<SpinnerContainer />}>
         <Component {...props} />
-    </Suspense>
-)
+      </Suspense>
+    );
 
-export default Loadable
-
+export default Loadable;
 
 //-----------------------|| how  to  used  it ||-----------------------//
 

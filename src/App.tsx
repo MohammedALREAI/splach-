@@ -5,22 +5,24 @@ import ErrorBoundary from './Component/ErrorBoundary/ErrorBoundary'
 import { Suspense } from 'react'
 import { SpinnerContainer } from './Component/widget/SpinnerContainer'
 
-
 function App() {
   return (
-    <p>dsds</p>
-//     <Providers>
-//             <MainContainer>
-//               sds
-//                  {/* <Suspense fallback={ <SpinnerContainer/>}>
-//                          <ErrorBoundary>
-// xzd
-//                     <AllRouter />
-//                 </ErrorBoundary>
-//                 </Suspense> */}
+    <>
+      <p>dsds</p>
+      <SpinnerContainer />
+    </>
+    //     <Providers>
+    //             <MainContainer>
+    //               sds
+    //                  {/* <Suspense fallback={ <SpinnerContainer/>}>
+    //                          <ErrorBoundary>
+    // xzd
+    //                     <AllRouter />
+    //                 </ErrorBoundary>
+    //                 </Suspense> */}
 
-//       </MainContainer>
-//     </Providers>
+    //       </MainContainer>
+    //     </Providers>
   )
 }
 

@@ -1,13 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Meta } from "../Hoc/Meta";
+import { Meta } from "../Hoc/Meta";
 
 interface Props {
-    page?:string
+  page?: string;
 }
 
 export const index = (props: Props) => {
-    return (
-        <div>
-            index
-        </div>
-    )
-}
+  return <div>
+
+    {/* <Meta title={"HOME PAGE"} /> */}
+  </div>;
+};

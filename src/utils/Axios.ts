@@ -1,24 +1,22 @@
-import { useToken } from './useToken'
-import axios from 'axios'
-import { API_URL } from '../Const/env'
+import { useToken } from "./useToken";
+import axios from "axios";
+import { API_URL } from "../Const/env";
 
-const token = useToken()
+const token = useToken();
 const axiosIntance = axios.create({
-
-     baseURL: API_URL,
-     headers: {
-          'Content-Type': 'application/json',
-          Authorization: token ? `Bearer ${token}` : '',
-     },
-})
-
+  baseURL: API_URL,
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: token ? `Bearer ${token}` : "",
+  },
+});
 
 axiosIntance.interceptors.request.use((req) => {
-     if (token) {
-          req.headers.Authorization = `Bearer ${token}`
-     }
-     return req
-})
+  if (token) {
+    req.headers.Authorization = `Bearer ${token}`;
+  }
+  return req;
+});
 
 // axiosIntance.interceptors.response.use((res) => {
 //      return res
@@ -32,4 +30,4 @@ axiosIntance.interceptors.request.use((req) => {
 //      return Promise.reject(error)
 // })
 
-export default axiosIntance
+export default axiosIntance;
