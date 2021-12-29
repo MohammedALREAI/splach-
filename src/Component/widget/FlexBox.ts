@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { GeneralComponentDiv } from "./GeneralComponentDiv";
-import { IDisplay } from "./styles.interface";
+import styled from 'styled-components';
+import { GeneralComponentDiv } from './GeneralComponentDiv';
+import { IDisplay } from './styles.interface';
 
 export const FlexBox = styled(GeneralComponentDiv)<IDisplay>`
   align-items: flex-start;

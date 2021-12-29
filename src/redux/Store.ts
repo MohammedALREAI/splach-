@@ -13,7 +13,7 @@ const middleware = [thunk];
 const Store = createStore(
   reducers,
   initialState,
-  composeWithDevTools(applyMiddleware(...middleware)),
+  composeWithDevTools(applyMiddleware(...middleware))
 );
 
 console.log('data -----3 ', Store.getState());

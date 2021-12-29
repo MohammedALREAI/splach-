@@ -1,4 +1,4 @@
-import { Button } from "../widget/styles";
+import { Button } from '../widget/styles';
 interface Props {
   text: string;
   onClick: () => void;

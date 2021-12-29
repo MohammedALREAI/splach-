@@ -1,5 +1,5 @@
-import React, { Component, ErrorInfo, ReactNode } from "react";
-import { ErrorImageContainer, ErrorImageOverlay, ErrorImageText } from "./ErrorBoundary.style";
+import React, { Component, ErrorInfo, ReactNode } from 'react';
+import { ErrorImageContainer, ErrorImageOverlay, ErrorImageText } from './ErrorBoundary.style';
 
 interface Props {
   children: React.ReactNode;
@@ -16,7 +16,7 @@ class ErrorBoundary extends React.Component<Props, State> {
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error("Uncaught error:", error, errorInfo);
+    console.error('Uncaught error:', error, errorInfo);
   }
 
   render() {

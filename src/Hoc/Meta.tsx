@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Helmet } from 'react-helmet-async';
 
 interface IMeta {
   title: string;
@@ -16,4 +16,3 @@ export const Meta = ({ title, description }: IMeta) => {
     </Helmet>
   );
 };
-

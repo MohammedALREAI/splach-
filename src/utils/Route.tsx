@@ -1,7 +1,7 @@
-import React, { Component, ReactNode, ComponentType } from "react";
-import { Route, Redirect, RouteComponentProps } from "react-router-dom";
-import { RouteProps } from "react-router";
-import { useToken } from "./useToken";
+import React, { Component, ReactNode, ComponentType } from 'react';
+import { Route, Redirect, RouteComponentProps } from 'react-router-dom';
+import { RouteProps } from 'react-router';
+import { useToken } from './useToken';
 
 interface IPrivateRoute extends RouteProps {
   token: boolean;

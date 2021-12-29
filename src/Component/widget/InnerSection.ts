@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Column, Row } from "./styles";
+import styled from 'styled-components';
+import { Column, Row } from './styles';
 
 export const InnerSection = styled(Column)`
   align-items: center;

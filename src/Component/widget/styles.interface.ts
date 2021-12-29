@@ -37,14 +37,17 @@ export interface General {
 }
 
 export type IGeneralDiv = General;
-export interface ITypography extends General {
+
+
+export interface ITypography extends Pick<General, 'padding' | 'color' | 'margin'> {
   fontSize?: number;
   weight?: string | number;
   decoration?: string;
+  as:string
 }
 
-export interface IDisplay extends IGeneralDiv {
-  display?: "flex" | "grid" | "block";
+export interface IDisplay extends Omit<General, 'fit' | 'fontSize'> {
+  display?: 'flex' | 'grid' | 'block';
 }
 
 export type IInput = General;

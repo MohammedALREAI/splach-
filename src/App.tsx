@@ -1,15 +1,14 @@
-import Providers from './Provider'
-import { AllRouter } from './Router'
-import { MainContainer } from './Component/widget/Section'
-import ErrorBoundary from './Component/ErrorBoundary/ErrorBoundary'
-import { Suspense } from 'react'
-import { SpinnerContainer } from './Component/widget/SpinnerContainer'
+import { CardItem } from './Component/ItemCard/CardItem';
+import { SpinnerContainer } from './Component/widget/SpinnerContainer';
+import { Typography } from './Component/widget/Typography';
+import Providers from './Provider';
+
 
 function App() {
   return (
     <>
-      <p>dsds</p>
-      <SpinnerContainer />
+      <CardItem />
+      {/* <Button/> */}
     </>
     //     <Providers>
     //             <MainContainer>
@@ -23,7 +22,7 @@ function App() {
 
     //       </MainContainer>
     //     </Providers>
-  )
+  );
 }
 
-export default App
+export default App;

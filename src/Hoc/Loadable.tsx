@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import React, { Suspense, LazyExoticComponent, ComponentType } from "react";
-import { SpinnerContainer } from "../Component/widget/SpinnerContainer";
+import React, { Suspense, LazyExoticComponent, ComponentType } from 'react';
+import { SpinnerContainer } from '../Component/widget/SpinnerContainer';
 
 //-----------------------|| LOADABLE - LAZY LOADING ||-----------------------//
 

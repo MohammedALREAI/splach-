@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ErrorImageOverlay = styled.div`
   align-items: center;
@@ -9,7 +9,7 @@ export const ErrorImageOverlay = styled.div`
   width: 100%;
 `;
 
-export const ErrorImageContainer = styled("div")<{ imageUrl: string }>`
+export const ErrorImageContainer = styled('div')<{ imageUrl: string }>`
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
   background-position: center;
   background-size: cover;

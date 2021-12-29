@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { FlexBox, Column } from "./styles";
+import styled from 'styled-components';
+import { FlexBox, Column } from './styles';
 
 export const Section = styled(FlexBox)`
   align-items: center;

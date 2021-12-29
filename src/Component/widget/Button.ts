@@ -1,8 +1,9 @@
-import { IGeneralDiv } from './styles.interface'
+import { IGeneralDiv } from './styles.interface';
 
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Button = styled('button')<IGeneralDiv>`
+
   border: 1px solid #707070;
   border-radius: ${(props) =>
     props.radius
@@ -121,4 +122,4 @@ export const Button = styled('button')<IGeneralDiv>`
         ? props.minWidth
         : props.minHeight + 'px'
       : '0px'};
-`
+`;

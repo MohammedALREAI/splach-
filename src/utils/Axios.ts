@@ -1,13 +1,13 @@
-import { useToken } from "./useToken";
-import axios from "axios";
-import { API_URL } from "../Const/env";
+import { useToken } from './useToken';
+import axios from 'axios';
+import { API_URL } from '../Const/env';
 
 const token = useToken();
 const axiosIntance = axios.create({
   baseURL: API_URL,
   headers: {
-    "Content-Type": "application/json",
-    Authorization: token ? `Bearer ${token}` : "",
+    'Content-Type': 'application/json',
+    Authorization: token ? `Bearer ${token}` : '',
   },
 });
 
