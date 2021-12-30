@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-console.log('Nav Link')
+console.log('Nav Link');
 export const NavLinkA = styled('li')`
     align-items: center;
     color: #999;
@@ -9,4 +9,4 @@ export const NavLinkA = styled('li')`
     list-style: none;
     padding-left: 20px;
     text-decoration: none;
-    `
+    `;

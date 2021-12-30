@@ -1,8 +1,8 @@
-import styled from 'styled-components'
-import { Row } from '../Row'
+import styled from 'styled-components';
+import { Row } from '../Row';
 
 
-console.log('navWrapper')
+console.log('navWrapper');
 export const NavLinkWrapper = styled('nav')`
   background-color: #fff;
   display: flex;
@@ -13,12 +13,12 @@ export const NavLinkWrapper = styled('nav')`
   top: 0;
   width: 100%;
   z-index: 1;
-`
+`;
 export const Logo = styled('img')`
   height: 34px;
   margin-top: 6px;
   width: 31px;
-`
+`;
 
 
 
