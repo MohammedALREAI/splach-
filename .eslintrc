@@ -23,7 +23,8 @@
     "spaced-comment": ["off"],
     "space-before-function-paren": ["off"],
     "indent": ["off"],
-    "@typescript-eslint/no-empty-function": ["error"]
+    "@typescript-eslint/no-empty-function": ["error"],
+    "semi": [2, "always"]
 
   },
   "env": {

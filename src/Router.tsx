@@ -1,12 +1,8 @@
 // import { lazy } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom';
 // import PrivateRoute from './utils/Route'
 
-
-
-
 // const HomeScreen = Loadable(lazy(() => import('./pages/index')));
-
 
 export const AllRouter = () => {
   return (
@@ -17,5 +13,5 @@ export const AllRouter = () => {
 
       {/* <Route exact path="*" component={NotFoundScreen} /> */}
     </Switch>
-  )
-}
+  );
+};
