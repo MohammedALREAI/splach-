@@ -1,5 +1,4 @@
-
-import { Image, Layout } from './styled';
+import { Image, Layout } from './styled'
 interface ImageType{
     img: string;
     title: string
@@ -8,7 +7,7 @@ interface Props{
     images: ImageType[]
 }
 
-const MainLayout= ({images}: Props)=> {
+const MainLayout = ({ images }: Props) => {
     return (
           <Layout variant="masonry" cols={3} >
             {images.map((item) => (
@@ -20,6 +19,6 @@ const MainLayout= ({images}: Props)=> {
                 />
             ))}
           </Layout>
-      );
+      )
 }
-export default MainLayout;
+export default MainLayout

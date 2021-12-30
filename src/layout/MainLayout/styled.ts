@@ -1,15 +1,15 @@
-import { ImageList } from "@mui/material";
-import styled from "styled-components";
+import { ImageList } from '@mui/material'
+import styled from 'styled-components'
 
-export const Layout= styled(ImageList)`
+export const Layout = styled(ImageList)`
 
-    margin: 40px auto;
-    width: 80%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     background-color: bisque;
     border: 1px solid;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+    margin: 40px auto;
+    width: 80%;
 
     @media (max-width: 900px){
         grid-template-columns: repeat(2, 1fr);
@@ -23,7 +23,7 @@ export const Layout= styled(ImageList)`
    
 `
 
-export const Image= styled.img`
-    width: 100%;
+export const Image = styled.img`
     height: 100%;
+    width: 100%;
 `
