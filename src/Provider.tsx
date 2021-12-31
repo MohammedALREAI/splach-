@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { ThemeProvider, DefaultTheme } from 'styled-components'
-import { GlobalStyle } from './theme/GlobalStyle'
-import { HelmetProvider } from 'react-helmet-async'
-import { Provider } from 'react-redux'
-import Store from './redux/Store'
-import { lightTheme, darkTheme } from './theme/theme'
-import { BrowserRouter } from 'react-router-dom'
+import React, { useState } from 'react';
+import { ThemeProvider, DefaultTheme } from 'styled-components';
+import { GlobalStyle } from './theme/GlobalStyle';
+import { HelmetProvider } from 'react-helmet-async';
+import { Provider } from 'react-redux';
+import Store from './redux/Store';
+import { lightTheme, darkTheme } from './theme/theme';
+import { BrowserRouter } from 'react-router-dom';
 
 
 
@@ -16,7 +16,7 @@ const Providers: React.FC = ({ children }) => {
     secondary: 'string',
     font: 'string',
     mode: 'light',
-})
+});
 
 
 
@@ -32,7 +32,7 @@ const Providers: React.FC = ({ children }) => {
       </BrowserRouter>
 
     </Provider>
-  )
-}
+  );
+};
 
 export default Providers;

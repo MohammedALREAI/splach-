@@ -1,6 +1,5 @@
-import * as React from 'react';
 import { TextField, Autocomplete, InputAdornment, Box } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
+import { Search } from '@mui/icons-material';
 
 interface Iprops {
     bR:string,
@@ -20,71 +19,57 @@ export default function AutoComplete({ bR, width }:Iprops) {
     <Autocomplete
       sx={{ width: { width }, borderRadius: { bR } }}
       freeSolo
-      groupBy={(option:any) => option.firstLetter}
-      getOptionLabel={(option:any) => option.title}
+      groupBy={(option: any) => option.firstLetter}
+      getOptionLabel={(option: any) => option.title}
       options={topFilms}
       renderOption={(props, option) => (
         <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
           {option.title}
         </Box>
       )}
-      renderInput={(params:any) => (
+      renderInput={(params: any) => (
         <TextField
           {...params}
-          placeholder="search"
+          placeholder="Search photos"
           InputProps={{
             ...params.InputProps,
             type: 'search',
             startAdornment: (
-            <InputAdornment position="start">
-              <SearchIcon />
-            </InputAdornment>
-          ),
-            }}
+              <InputAdornment position="start">
+                <Search />
+              </InputAdornment>
+            ),
+          }}
         />
       )}
     />
   );
 }
 
-
 const topFilms = [
   {
- title: 'The Shawshank Redemption',
-year: 1994,
-
-       name: 'trending',
-
-
-
-},
+    title: 'The Shawshank Redemption',
+    year: 1994,
+    name: 'trending',
+  },
   {
- title: 'The Godfather',
-year: 1972,
-
-      name: '1trending',
-
-},
+    title: 'The Godfather',
+    year: 1972,
+    name: '1trending',
+  },
   {
- title: 'The Godfather: Part II',
-year: 1974,
-
-      name: 'grending',
-
-},
+    title: 'The Godfather: Part II',
+    year: 1974,
+    name: 'grending',
+  },
   {
- title: 'The Dark Knight',
-year: 2008,
-
-      name: 'frending',
-
-},
+    title: 'The Dark Knight',
+    year: 2008,
+    name: 'frending',
+  },
   {
- title: '12 Angry Men',
-year: 1957,
-
+    title: '12 Angry Men',
+    year: 1957,
     name: '2rending',
-
-},
-
+  },
 ];
