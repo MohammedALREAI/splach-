@@ -6,16 +6,15 @@ import { Provider } from 'react-redux';
 import Store from './Redux/Store';
 // import useTheme from './Theme/useTheme'
 import { BrowserRouter } from 'react-router-dom';
+import { GlobalStyles } from '@mui/material';
 
 const Providers: React.FC = ({ children }) => {
-  // const theme = useTheme()
-
-  return (
+return (
     <Provider store={Store}>
       <BrowserRouter>
         <HelmetProvider>
           {/* <ThemeProvider theme={}> */}
-          {/* <GlobalStyle /> */}
+          {/* <GlobalStyles /> */}
           {children}
           {/* </ThemeProvider> */}
         </HelmetProvider>

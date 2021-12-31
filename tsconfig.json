@@ -33,20 +33,7 @@
         }
       }
     ],
-    "baseUrl": "src",
-    "paths": {
-      "src/*": ["*"],
-      "@/Component/*": ["Component/*"],
-      "@/Const/*": ["Const/*"],
-      "@/Hoc/*": ["Hoc/*"],
-      "@/Layout/*": ["Layout/*"],
-      "@/Pages/*": ["Pages/*"] ,
-      "@/Redux/*": ["Redux/*"] ,
-      "@/Theme/*": ["Theme/*"] ,
-      "@/Utils/*": ["Utils/*"] ,
-    
-    
-    }
+    "baseUrl": "src"
   },
   "include": [
     "src",
