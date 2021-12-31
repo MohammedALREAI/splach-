@@ -5,34 +5,33 @@ import { Row } from '../widget/Row';
 
 interface Props {
 me?:string,
-icon?:ReactNode
+icon?:ReactNode,
+width:string
 }
 
 
-export const CustomButomm = styled('button')`
+export const CustomButon = styled.button<Props>`
 background-color: #ffffff; 
-color: #111111; 
+color: #767676; 
 font-size: 14px;
 font-weight: 500;
-height: 32px;
-line-height: 30px;
+height: 40px;
 margin: 0px;
 padding:4px
 padding: 0px 11px;
-width: 39px;
-background-color: #fff;
-    border-color: #d1d1d1;
-    color: #767676;
+width: ${(props) => (props.width ? props.width : '50px')};
+border : 1px solid #767676;
+border-radius : 4px;
 
 `;
 
-export const ButtonWithIcons = (props: Props) => {
+export const ButtonWithIcons = ({ icon, width }: Props) => {
     return (
         <Row maxWidth="">
 
-<CustomButomm type="button" title="Like photo" className="">
-            {'icon'}
-</CustomButomm>
+<CustomButon type="button" title="Like photo" className="" width={width}>
+            {icon}
+</CustomButon>
         </Row>
     );
 };
