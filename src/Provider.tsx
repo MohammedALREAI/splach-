@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
-import Store from './Redux/Store';
+import Store from './redux/Store';
 // import useTheme from './Theme/useTheme'
 import { BrowserRouter } from 'react-router-dom';
 
