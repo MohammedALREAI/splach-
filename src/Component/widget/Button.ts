@@ -12,7 +12,7 @@ export const Button = styled('button')<IGeneralDiv>`
         : props.radius + 'px'
       : '0px'};
 
-  font-size: ${(props) => (props.fontSize ? props.fontSize + 'px' : props.theme.font.md + 'px')};
+  font-size: ${(props) => (props.fontSize ? props.fontSize + 'px' : props.theme.font + 'px')};
   font-weight: ${(props) =>
     props.weight ? (typeof props.weight === 'string' ? props.weight : props.weight) : 'normal'};
 
@@ -122,4 +122,4 @@ export const Button = styled('button')<IGeneralDiv>`
         ? props.minWidth
         : props.minHeight + 'px'
       : '0px'};
-`;
+`

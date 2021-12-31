@@ -36,8 +36,6 @@
     "baseUrl": "src"
   },
   "include": [
-    "src",
-    "**/*.ts",
-    "**/*.d.ts"
-  ]
+    "src"
+, "styled.d.ts"  ]
 }
