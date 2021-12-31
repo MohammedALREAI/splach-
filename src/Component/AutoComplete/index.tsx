@@ -4,9 +4,10 @@ import SearchIcon from '@mui/icons-material/Search';
 
 interface Iprops {
     bR:string,
+    width: string,
 }
 
-export default function AutoComplete({ bR }:Iprops) {
+export default function AutoComplete({ bR, width }:Iprops) {
   const options = topFilms.map((option) => {
     const firstLetter = option.name.toUpperCase();
     return {
@@ -17,7 +18,7 @@ export default function AutoComplete({ bR }:Iprops) {
 
   return (
     <Autocomplete
-      sx={{ width: '60%', borderRadius: { bR } }}
+      sx={{ width: { width }, borderRadius: { bR } }}
       freeSolo
       groupBy={(option:any) => option.firstLetter}
       getOptionLabel={(option:any) => option.title}
