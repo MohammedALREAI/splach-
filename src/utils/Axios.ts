@@ -38,7 +38,7 @@ axiosIntance.interceptors.request.use((req) => {
 //           localStorage.clear()
 //           store.dispatch({ type: authConstants.LOGOUT_SUCCESS })
 //      }
-//      return Promise.reject(error)
+//      return req
 // })
 
 export default axiosIntance;
