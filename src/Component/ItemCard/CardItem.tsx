@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getPhats } from 'Redux/photos/photos.actions';
+import { getPhats } from '../../redux/photos/photos.actions';
 import { Row, Column, Image, Typography } from '../widget/styles';
 import { ButtonWithIcons } from './ButtonWithSvg';
 import { ButtonWedgiewrapperBottom, ButtonWithImage, ButtonWithImageWrapper, ButtonWithImageWrapperText, ImageContainerContent, ImageLogo, UserNmae, WrapperImage, WrapperImageColumn, WrapperTopItem } from './CardItem.styles';

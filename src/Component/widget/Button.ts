@@ -122,4 +122,4 @@ export const Button = styled('button')<IGeneralDiv>`
         ? props.minWidth
         : props.minHeight + 'px'
       : '0px'};
-`
+`;

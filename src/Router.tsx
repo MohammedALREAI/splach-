@@ -1,6 +1,6 @@
-import { lazy } from 'react'
-import { Switch, Route } from 'react-router-dom'
-import Loadable from './Hoc/Loadable'
+import { lazy } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Loadable from './Hoc/Loadable';
 
 
 
