@@ -10,14 +10,12 @@ interface Props{
     images: ImageType[]
 }
 
-const MainLayout= ({images}: Props)=> {
+const MainLayout = ({ images }: Props) => {
+    const isMeduim = useMediaQuery('(max-width: 950px)');
+    const isSmall = useMediaQuery('(max-width: 650px)');
 
-    const isMeduim= useMediaQuery("(max-width: 950px)");
-    const isSmall= useMediaQuery("(max-width: 650px)");
-
-    
     return (
-          <Layout variant="masonry" cols={ isSmall ? 1 : isMeduim? 2 : 3 } gap={15}>
+          <Layout variant="masonry" cols={ isSmall ? 1 : isMeduim ? 2 : 3 } gap={15}>
             {images.map((item) => (
                 <Image
                   src={`${item.img}?w=248&fit=crop&auto=format`}
@@ -28,5 +26,5 @@ const MainLayout= ({images}: Props)=> {
             ))}
           </Layout>
       );
-}
+};
 export default MainLayout;

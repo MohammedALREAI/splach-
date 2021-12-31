@@ -1,8 +1,6 @@
-import styled from 'styled-components'
-import { Row } from '../Row'
+import styled from 'styled-components';
+import { Row } from '../Row';
 
-
-console.log('navWrapper')
 export const NavLinkWrapper = styled(Row)`
     align-items: center;
     background-color: red;
@@ -30,8 +28,7 @@ export const NavLinkWrapper = styled(Row)`
         margin: 0 !important;
     }
     }
-
-`
+`;
 
 
 

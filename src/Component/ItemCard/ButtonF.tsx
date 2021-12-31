@@ -31,7 +31,7 @@ export const ButtonWithIcons = (props: Props) => {
         <Row maxWidth="">
 
 <CustomButomm type="button" title="Like photo" className="">
-            {"icon"}
+            {'icon'}
 </CustomButomm>
         </Row>
     );

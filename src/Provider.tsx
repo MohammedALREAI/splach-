@@ -3,9 +3,9 @@ import { ThemeProvider } from 'styled-components';
 
 import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
-import Store from './Redux/Store';
 // import useTheme from './Theme/useTheme'
 import { BrowserRouter } from 'react-router-dom';
+import Store from 'redux/Store';
 
 const Providers: React.FC = ({ children }) => {
   // const theme = useTheme()

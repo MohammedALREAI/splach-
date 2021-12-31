@@ -1,5 +1,5 @@
-import { NavLinkA } from '../widget/Nav/NavLinkA'
-import { NavLinkWrapper } from '../widget/Nav/NavLinkWrapper'
+import { NavLinkA } from '../widget/Nav/NavLinkA';
+import { NavLinkWrapper } from '../widget/Nav/NavLinkWrapper';
 
 
 export const Header = ({}) => {
@@ -11,5 +11,5 @@ export const Header = ({}) => {
             <NavLinkA >Ahmad Saleh</NavLinkA>
         </NavLinkWrapper>
         </>
-    )
-}
+    );
+};

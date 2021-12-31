@@ -1,6 +1,5 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-console.log('Nav Link')
 export const NavLinkA = styled('li')`
     color: white;
     position: relative;
@@ -20,4 +19,4 @@ export const NavLinkA = styled('li')`
     &:hover::before {
       width: 100%;
     }
-    `
+    `;
