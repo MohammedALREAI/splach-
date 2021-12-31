@@ -1,19 +1,30 @@
-import { useToken } from './useToken';
 import axios from 'axios';
-import { API_URL } from '../Const/env';
+import { ACCESS_KEY, URL_SITE } from '../Const/env';
 
-const token = useToken();
+
+
+
+
+
+
+
+
+
+
 const axiosIntance = axios.create({
-  baseURL: API_URL,
+  baseURL: URL_SITE,
   headers: {
     'Content-Type': 'application/json',
-    Authorization: token ? `Bearer ${token}` : '',
+    Authorization:
+    `Client-ID ${ACCESS_KEY}`,
+
   },
 });
 
 axiosIntance.interceptors.request.use((req) => {
-  if (token) {
-    req.headers.Authorization = `Bearer ${token}`;
+  if (ACCESS_KEY) {
+    req.headers.Authorization = `Client-ID ${ACCESS_KEY}`
+    ;
   }
   return req;
 });

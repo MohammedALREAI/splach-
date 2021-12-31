@@ -27,5 +27,5 @@ ${({ color, margin, fontSize, weight, padding, decoration }) => css<ITypography>
 
 
 Typography.defaultProps = {
-  color: 'red',
+  color: 'black',
 };

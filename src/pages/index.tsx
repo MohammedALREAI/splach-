@@ -1,5 +1,5 @@
+import { Meta } from 'Hoc/Meta';
 import React from 'react';
-import { Meta } from '@/Hoc/Meta';
 
 
 interface Props {
