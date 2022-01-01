@@ -26,12 +26,12 @@ background-color: #fff;
 
 `;
 
-export const ButtonWithIcons = (props: Props) => {
+export const ButtonWithIcons = ({ icon }: Props) => {
     return (
         <Row maxWidth="">
 
 <CustomButomm type="button" title="Like photo" className="">
-            {"icon"}
+            {icon}
 </CustomButomm>
         </Row>
     );
