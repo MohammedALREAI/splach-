@@ -4,7 +4,6 @@ import { Button } from '../widget/Button';
 import { Row } from '../widget/Row';
 
 interface Props {
-me?:string,
 icon?:ReactNode,
 width:string
 }
