@@ -13,7 +13,7 @@ const Banner = () => {
                         <Typography as={'a'}>freely-usable images.</Typography>
                     </Typography>
                     <Typography as={'b'}>Powered by creators everywhere</Typography>
-                    <AutoComplete bR='10px'/>
+                    <AutoComplete bR='10px' width='100%' />
                     <Typography as={'p'}>Trinding: Map on api triding </Typography>
                 </Container>
             </BannerSection>
