@@ -7,7 +7,8 @@ const Home = () => {
   return (
     <>
       <Banner />
-      <MainLayout images={itemData} />
+      <MainLayout images={itemData} /> 
+       {/*MainLayout takes array of the ImageCard  */}
     </>
   );
 };

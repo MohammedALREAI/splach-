@@ -1,5 +1,5 @@
-import Theme from './theme';
+// import Theme from './theme';
 
-export default function useTheme() {
-  return Theme;
-}
+// export default function useTheme() {
+//   return Theme;
+// }

@@ -1,10 +1,10 @@
 import { SECRET_KEY, ACCESS_KEY } from './../../Const/env';
 import { AxiosResponse } from 'axios';
 import { Dispatch } from 'react';
-import axiosIntance from 'Utils/Axios';
 import { PhotosConst } from './photos.const';
 import { GetItemsListsActions, GetItemsListActions } from './photos.types';
-import { TState } from 'Redux/Store';
+import axiosIntance from '../../utils/Axios';
+import { TState } from 'redux/Store';
 
 
 

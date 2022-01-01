@@ -23,16 +23,16 @@ const PlusSvg = (
 
 export const CardItem = ({ imageBackGround, ...props }: Props) => {
   const [show, setshow] = useState<boolean>(false);
-  const handleClick = () => {
-    console.log('clicked');
-  };
-  const [page, setPage] = useState<number>(1);
+  // const handleClick = () => {
+  //   console.log('clicked');
+  // };
+  // const [page, setPage] = useState<number>(1);
 
-  const dispatch = useDispatch();
-  useEffect(() => {
-   dispatch(getPhats(1));
-   dispatch(getPhats(2));
-  }, [dispatch]);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //  dispatch(getPhats(1));
+  //  dispatch(getPhats(2));
+  // }, [dispatch]);
   return (
     <WrapperImage>
       <ImageContainerContent imag="https://images.unsplash.com/photo-1640767549157-7cbdb00ab8a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"

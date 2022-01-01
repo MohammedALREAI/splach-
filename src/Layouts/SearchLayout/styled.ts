@@ -1,22 +1,22 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Layout= styled.div`
+export const Layout = styled.div`
+    background-color: bisque;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100%;
     margin: 40px auto;
     width: 80%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    background-color: bisque;
 
     @media (max-width: 700px){
         grid-template-columns: repeat(2, 1fr);
     }
-   
-`
-export const LayoutItem= styled.div`
-    height: 200px;
+`;
+
+export const LayoutItem = styled.div`
     background-color: aqua;
+    height: 200px;
 
     @media (max-width: 700px){
         background-color: red;
@@ -28,5 +28,4 @@ export const LayoutItem= styled.div`
         height: 170px;
         background-color: aqua;
     }
-
-`
+`;
