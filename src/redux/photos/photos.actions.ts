@@ -1,4 +1,4 @@
-import { SECRET_KEY, ACCESS_KEY } from './../../Const/env';
+import { ACCESS_KEY } from './../../Const/env';
 import { AxiosResponse } from 'axios';
 import { Dispatch } from 'react';
 import axiosIntance from 'Utils/Axios';

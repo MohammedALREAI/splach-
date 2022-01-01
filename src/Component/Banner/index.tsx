@@ -1,19 +1,25 @@
-import { BannerSection, Container, Typography } from './styled';
+import { BannerSection, Container, UnsplashTitle, UnsplashTitleSub } from './styled';
 import AutoComplete from 'Component/AutoComplete';
+import { Typography } from 'Component/widget/Typography';
 
 const Banner = () => {
     return (
         <div>
             <BannerSection>
                 <Container>
-                    <Typography as="h1">Unsplash</Typography>
+                    <UnsplashTitle>Unsplash</UnsplashTitle>
 
-                    <Typography as={'p'}>
+                    <UnsplashTitleSub>
                         The internet’s source of
-                        <Typography as={'a'}>freely-usable images.</Typography>
-                    </Typography>
-                    <Typography as={'b'}>Powered by creators everywhere</Typography>
-                    <AutoComplete bR='10px'/>
+                        <a >freely-usable images.</a>
+                    </UnsplashTitleSub>
+                    <UnsplashTitleSub>
+                    Powered by creators everywhere
+                        </UnsplashTitleSub>
+                    <AutoComplete bR='10px' width={''}/>
+                    <UnsplashTitleSub>
+                    Trinding:  <a>Map on api triding.</a>
+                    </UnsplashTitleSub>
                     <Typography as={'p'}>Trinding: Map on api triding </Typography>
                 </Container>
             </BannerSection>

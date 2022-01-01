@@ -8,8 +8,5 @@ export const CustomButton = ({ text, onClick }: Props) => {
     <Button onClick={onClick}>
       {text}
     </Button>
-  )
-}
-export const CustomButton = ({ text, onClick }: Props) => {
-  return <Button onClick={onClick}>{text}</Button>;
+  );
 };
