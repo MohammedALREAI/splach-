@@ -1,17 +1,21 @@
-// import { lazy } from 'react'
+import { lazy } from 'react';
 import { Switch, Route } from 'react-router-dom';
-// import PrivateRoute from './utils/Route'
+import Loadable from './Hoc/Loadable';
 
-// const HomeScreen = Loadable(lazy(() => import('./pages/index')));
+const HomeScreen = Loadable(lazy(() => import('./Pages/Home')));
+
+
+const SearchPage = Loadable(lazy(() => import('./Pages/SearchPage')));
+const CollectionsPage = Loadable(lazy(() => import('./Pages/CollectionsPage')));
+const UserPage = Loadable(lazy(() => import('./Pages/UserPage')));
 
 export const AllRouter = () => {
   return (
     <Switch>
-      {/* <Route exact path="/" component={HomeScreen} /> */}
-
-      {/* <PrivateRoute exact path="/profile" component={Profile} /> */}
-
-      {/* <Route exact path="*" component={NotFoundScreen} /> */}
+      <Route exact path="/" component={HomeScreen} />
+      <Route exact path="/photos/:name" component={SearchPage} />
+      <Route exact path="/collections/:name" component={CollectionsPage} />
+      <Route exact path="/users/:name" component={UserPage} />
     </Switch>
   );
 };

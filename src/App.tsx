@@ -1,27 +1,14 @@
-import { CardItem } from './Component/ItemCard/CardItem';
-import { SpinnerContainer } from './Component/widget/SpinnerContainer';
-import { Typography } from './Component/widget/Typography';
+import { Layout } from 'Layouts/layout';
 import Providers from './Provider';
-
+import { AllRouter } from './Router';
 
 function App() {
   return (
-    <>
-      <CardItem />
-      {/* <Button/> */}
-    </>
-    //     <Providers>
-    //             <MainContainer>
-    //               sds
-    //                  {/* <Suspense fallback={ <SpinnerContainer/>}>
-    //                          <ErrorBoundary>
-    // xzd
-    //                     <AllRouter />
-    //                 </ErrorBoundary>
-    //                 </Suspense> */}
+    <Providers>
+                  {/* <Header/> */}
 
-    //       </MainContainer>
-    //     </Providers>
+      <Layout children={<AllRouter/>}/>
+    </Providers>
   );
 }
 

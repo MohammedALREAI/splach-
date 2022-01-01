@@ -1,25 +1,35 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-
+import React, { useState } from 'react';
+import { ThemeProvider, DefaultTheme } from 'styled-components';
 import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
-import Store from './redux/Store';
-// import useTheme from './Theme/useTheme'
 import { BrowserRouter } from 'react-router-dom';
+import Store from 'Redux/Store';
+import { GlobalStyle } from 'Theme/GlobalStyle';
+
+
 
 const Providers: React.FC = ({ children }) => {
-  // const theme = useTheme()
+  const [theme, setTheme] = useState({
+    background: 'string',
+    primary: 'string',
+    secondary: 'string',
+    font: 'string',
+    mode: 'light',
+});
+
+
 
   return (
     <Provider store={Store}>
       <BrowserRouter>
         <HelmetProvider>
-          {/* <ThemeProvider theme={}> */}
-          {/* <GlobalStyle /> */}
-          {children}
-          {/* </ThemeProvider> */}
+          <ThemeProvider theme={theme}>
+            <GlobalStyle />
+            {children}
+          </ThemeProvider>
         </HelmetProvider>
       </BrowserRouter>
+
     </Provider>
   );
 };

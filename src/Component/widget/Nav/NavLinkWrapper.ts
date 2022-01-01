@@ -1,9 +1,7 @@
 import styled from 'styled-components';
-import { Row } from '../Row';
 
-
-console.log('navWrapper');
 export const NavLinkWrapper = styled('nav')`
+  align-items: center;
   background-color: #fff;
   display: flex;
   left: 0;
@@ -19,36 +17,3 @@ export const Logo = styled('img')`
   margin-top: 6px;
   width: 31px;
 `;
-
-
-
-
-/*
-export interface ITypography extends Pick<General, 'padding' | 'color' | 'margin'> {
-  fontSize?: number;
-  weight?: string | number;
-  decoration?: string;
-}
-
-
-
-export const Typography = styled('p')<ITypography>
-
-${({ color, margin, fontSize, weight, padding, decoration }) => css<ITypography>
-    color: ${color};
-    display: inline-block;
-    font-size: ${fontSize};
-    font-weight: ${weight};
-    margin: ${margin};
-    padding: ${padding};
-    text-decoration: ${decoration};
-
-    }
-;
-
-
-Typography.defaultProps = {
-  color: 'red',
-};
-
-*/
