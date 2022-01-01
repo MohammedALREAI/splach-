@@ -1,6 +1,7 @@
 import { useMediaQuery } from '@mui/material';
 import { Image, Layout } from './styled';
 import { CardItem } from '../../Component/ItemCard/CardItem';
+import { LayoutContainer } from 'Layouts/SearchLayout/styled';
 
 interface ImageType {
   img: string;
@@ -10,12 +11,12 @@ interface Props {
   images: ImageType[];
 }
 
-const MainLayout = ({ images }: Props) => {
+  const MainLayout = ({ images }: Props) => {
   const isMeduim = useMediaQuery('(max-width: 950px)');
   const isSmall = useMediaQuery('(max-width: 650px)');
 
   return (
-    <>
+    <LayoutContainer>
       <Layout variant="masonry" cols={isSmall ? 1 : isMeduim ? 2 : 3} gap={15}>
         {/*
           Below can you make mapping on the photos
@@ -39,7 +40,7 @@ const MainLayout = ({ images }: Props) => {
           />
         ))} */}
       </Layout>
-    </>
+    </LayoutContainer>
   );
 };
 export default MainLayout;
