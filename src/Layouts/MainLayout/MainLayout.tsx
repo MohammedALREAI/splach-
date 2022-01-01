@@ -14,39 +14,53 @@ interface ImageType {
   title: string;
 }
 
-
 const MainLayout = () => {
   const isMeduim = useMediaQuery('(max-width: 950px)');
   const isSmall = useMediaQuery('(max-width: 650px)');
   const dispatch = useDispatch<ThunkDispatch<TState, any, GetItemsListsActions>>();
   const [page, setpage] = useState<number>(1);
-   const items = useSelector((state:TState) => state.photos.items.item);
+  const [hasMore, sethasMore] = useState<boolean>(true);
+  const items = useSelector((state: TState) => state.photos.items.item);
 
   useEffect(() => {
-    dispatch(getPhats(1));
+    dispatch(getPhats(page));
   }, [dispatch, page]);
 
+  console.log('items------------->', items);
+
+
+//   const fetchMoreData = () => {
+//     setTimeout(() => {
+//     setpage((perv) => perv + 1);
+//     }, 500);
+// };
   return (
     <Layout variant="masonry" cols={isSmall ? 1 : isMeduim ? 2 : 3} gap={15}>
- <InfiniteScroll
+      <div
+        id="scrollableDiv"
+        style={{
+          height: 300,
+          overflow: 'auto',
+          display: 'flex',
+          flexDirection: 'column-reverse',
+        }}
+      >
+        {/*Put the scroll bar always on the bottom*/}
+        {/* <InfiniteScroll
           dataLength={10}
-          next={() => setpage(prev => prev + 1)}
+          next={fetchMoreData}
+          style={{ display: 'flex', flexDirection: 'column-reverse' }} //To put endMessage and loader to the top.
+          inverse={true} //
           hasMore={true}
           loader={<h4>Loading...</h4>}
+          scrollableTarget="scrollableDiv"
         >
-         {items.map((item) => (
-           <>
-          <p>{item.id}</p>
-        <Image
-          src={'https://images.unsplash.com/photo-1638913660695-b490171d17c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODcxNzN8MXwxfGFsbHwxfHx8fHx8Mnx8MTY0MDk5NDYwMw&ixlib=rb-1.2.1&q=80&w=400?w=248&fit=crop&auto=format'}
-          srcSet={'https://images.unsplash.com/photo-1638913660695-b490171d17c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODcxNzN8MXwxfGFsbHwxfHx8fHx8Mnx8MTY0MDk5NDYwMw&ixlib=rb-1.2.1&q=80&w=400?w=248&fit=crop&auto=format&dpr=2 2x'}
-          alt={item.id}
-          loading="lazy"
-        />
-        </>
-      ))}
-        </InfiniteScroll>
-
+{ console.log('items------------->222222222', items)}
+          {Array(10).fill(0).map((_, index) => (
+            <div key={index}>div - SLJDKSJDKSJKJK</div>
+          ))}
+        </InfiniteScroll> */}
+      </div>
     </Layout>
   );
 };

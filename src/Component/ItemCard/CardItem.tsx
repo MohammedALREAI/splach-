@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getPhats } from '../../redux/photos/photos.actions';
+import { getPhats } from 'Redux/photos/photos.actions';
+import { PhotosItem } from 'Redux/photos/photos.types';
 import { Row, Column, Image, Typography } from '../widget/styles';
 import { ButtonWithIcons } from './ButtonWithSvg';
 import { ButtonWedgiewrapperBottom, ButtonWithImage, ButtonWithImageWrapper, ButtonWithImageWrapperText, ImageContainerContent, ImageLogo, UserNmae, WrapperImage, WrapperImageColumn, WrapperTopItem } from './CardItem.styles';
 interface Props {
-  imageBackGround?: string;
-  imageIconsAlt?: string;
-  imageIcons?: string;
+  item:PhotosItem
 }
 
 const LikeSvg = (
@@ -21,22 +20,16 @@ const PlusSvg = (
   </svg>
 );
 
-export const CardItem = ({ imageBackGround, ...props }: Props) => {
+export const CardItem = (props: Props) => {
   const [show, setshow] = useState<boolean>(false);
   const handleClick = () => {
     console.log('clicked');
   };
-  const [page, setPage] = useState<number>(1);
 
-  const dispatch = useDispatch();
-  useEffect(() => {
-   dispatch(getPhats(1));
-   dispatch(getPhats(2));
-  }, [dispatch]);
-  return (
+  console.log('item', props);
+    return (
     <WrapperImage>
-      <ImageContainerContent imag="https://images.unsplash.com/photo-1640767549157-7cbdb00ab8a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-      onMouseEnter={() => setshow(true)} onMouseLeave={() => setshow(false)}>
+      <ImageContainerContent imag={''} onMouseEnter={() => setshow(true)} onMouseLeave={() => setshow(false)}>
         {show && (
           <WrapperImageColumn>
             <WrapperTopItem>
