@@ -2,12 +2,12 @@ import { useMediaQuery } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
-import { getPhats } from 'Redux/photos/photos.actions';
+import { getPhats } from '../../redux/photos/photos.actions';
 import { GetItemsListsActions } from 'Redux/photos/photos.types';
 import { TState } from 'Redux/Store';
 import { itemData } from 'Utils/Constants';
 import { Image, Layout } from './styled';
-import InfiniteScroll from 'react-infinite-scroll-component';
+// import InfiniteScroll from 'react-infinite-scroll-component';
 
 interface ImageType {
   img: string;

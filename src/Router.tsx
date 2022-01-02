@@ -2,12 +2,12 @@ import { lazy } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Loadable from './Hoc/Loadable';
 
-const HomeScreen = Loadable(lazy(() => import('./Pages/Home')));
+const HomeScreen = Loadable(lazy(() => import('./pages/Home')));
 
 
-const SearchPage = Loadable(lazy(() => import('./Pages/SearchPage')));
-const CollectionsPage = Loadable(lazy(() => import('./Pages/CollectionsPage')));
-const UserPage = Loadable(lazy(() => import('./Pages/UserPage')));
+const SearchPage = Loadable(lazy(() => import('./pages/SearchPage')));
+const CollectionsPage = Loadable(lazy(() => import('./pages/CollectionsPage')));
+const UserPage = Loadable(lazy(() => import('./pages/UserPage')));
 
 export const AllRouter = () => {
   return (

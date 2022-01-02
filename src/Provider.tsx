@@ -3,8 +3,8 @@ import { ThemeProvider, DefaultTheme } from 'styled-components';
 import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import Store from 'Redux/Store';
-import { GlobalStyle } from 'Theme/GlobalStyle';
+import Store from './redux/Store';
+import { GlobalStyle } from './theme/GlobalStyle';
 
 
 

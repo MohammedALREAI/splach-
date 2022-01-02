@@ -25,15 +25,6 @@ border-radius : 4px;
 
 `;
 
-<<<<<<< HEAD
-export const ButtonWithIcons = ({ icon }: Props) => {
-    return (
-        <Row maxWidth="">
-
-<CustomButomm type="button" title="Like photo" className="">
-            {icon}
-</CustomButomm>
-=======
 export const ButtonWithIcons = ({ icon, width }: Props) => {
     return (
         <Row maxWidth="">
@@ -41,7 +32,6 @@ export const ButtonWithIcons = ({ icon, width }: Props) => {
 <CustomButon type="button" title="Like photo" className="" width={width}>
             {icon}
 </CustomButon>
->>>>>>> 5c115b4661241b87568976fc8f72b2abfb60bf63
         </Row>
     );
 };
