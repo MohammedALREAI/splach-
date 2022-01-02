@@ -1,3 +1,4 @@
+import { PhtosShape } from '@types';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getPhats } from 'Redux/photos/photos.actions';
@@ -6,7 +7,7 @@ import { Row, Column, Image, Typography } from '../widget/styles';
 import { ButtonWithIcons } from './ButtonWithSvg';
 import { ButtonWedgiewrapperBottom, ButtonWithImage, ButtonWithImageWrapper, ButtonWithImageWrapperText, ImageContainerContent, ImageLogo, UserNmae, WrapperImage, WrapperImageColumn, WrapperTopItem } from './CardItem.styles';
 interface Props {
-  item:PhotosItem
+  item:PhtosShape
 }
 
 const LikeSvg = (
@@ -20,16 +21,16 @@ const PlusSvg = (
   </svg>
 );
 
-export const CardItem = (props: Props) => {
+export const CardItem = ({ item }: Props) => {
   const [show, setshow] = useState<boolean>(false);
   const handleClick = () => {
     console.log('clicked');
   };
 
-  console.log('item', props);
+  console.log('item', item.urls.thumb);
     return (
     <WrapperImage>
-      <ImageContainerContent imag={''} onMouseEnter={() => setshow(true)} onMouseLeave={() => setshow(false)}>
+      <ImageContainerContent imag={`${item.urls.thumb}?w=248&fit=crop&auto=format`} onMouseEnter={() => setshow(true)} onMouseLeave={() => setshow(false)}>
         {show && (
           <WrapperImageColumn>
             <WrapperTopItem>
@@ -39,8 +40,11 @@ export const CardItem = (props: Props) => {
             <ButtonWedgiewrapperBottom>
               <ButtonWithImageWrapper>
                 <ImageLogo
-                  src="https://images.unsplash.com/profile-1638212144583-a96726613b23image?dpr=1&auto=format&fit=crop&w=32&h=32&q=60&crop=faces&bg=fff"
                   className="imag_log"
+                  src={'https://images.unsplash.com/photo-1623852990731-472e0d1b047f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max?w=248&fit=crop&auto=format'}
+                  srcSet={'https://images.unsplash.com/photo-1623852990731-472e0d1b047f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max?w=248&fit=crop&auto=format&dpr=2 2x'}
+                  alt={item.id}
+                  loading="lazy"
                 />
                 <ButtonWithImageWrapperText>
                   <UserNmae className="userNmae">ssssssss</UserNmae>

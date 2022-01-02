@@ -30,7 +30,7 @@ export const getPhats = (page = 1): ((dispatch: Dispatch<GetItemsListsActions>, 
 
       dispatch({
         type: PhotosConst.GET_LIST_ITEMS_PHTOS_SUCCESS,
-        payload: [...oldState, response.data],
+        payload: [...oldState, ...response.data],
       });
     } catch (e: any) {
       dispatch({
