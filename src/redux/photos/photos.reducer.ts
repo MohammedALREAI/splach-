@@ -1,3 +1,4 @@
+import { PhtosShape } from '@types';
 import { PhotosConst } from './photos.const';
 import { PhtosActions, PhotosItem } from './photos.types';
 
@@ -6,13 +7,13 @@ import { PhtosActions, PhotosItem } from './photos.types';
 
 interface IState{
     items:{
-        item:PhotosItem[],
+        item:PhtosShape[],
         isLoading: boolean,
         error: string,
 
     },
     item:{
-        item:PhotosItem[] | PhotosItem,
+        item:PhtosShape[] | PhtosShape,
         isLoading: boolean,
         error: string,
     }
@@ -26,7 +27,7 @@ const initialState:IState = {
 
     },
     item: {
-        item: {} as PhotosItem,
+        item: {} as PhtosShape,
         isLoading: false,
         error: '',
     },
