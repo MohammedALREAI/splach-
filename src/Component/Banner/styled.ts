@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import Image from '../../Assets/background.jpg';
 
 export const BannerSection = styled.div`
     
     align-items: center;
-    background: url("https://images.unsplash.com/photo-1640173022647-025eaeed4cf4?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1vZi10aGUtZGF5fHx8fGVufDB8fHx8&amp;auto=format%2Ccompress&amp;fit=crop&amp;w=1000&amp;h=1000") no-repeat center center/cover ;  
+    background: url(${Image}) no-repeat center center/cover ;  
     display: flex;
     height: 90vh;
     justify-content: space-around;
