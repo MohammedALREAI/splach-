@@ -37,7 +37,7 @@ const MainLayout = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [dispatch]);
+  }, [dispatch, page]);
 
   const handleScroll = () => {
     // if (window.innerHeight === 100) {
