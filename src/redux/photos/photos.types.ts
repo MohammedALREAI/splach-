@@ -1,10 +1,11 @@
+import { PhtosShape } from '@types';
 import { Action } from 'redux';
 import { PhotosConst } from './photos.const';
 
 
 
 export interface PhotosItem {
-
+    title:string,
     'id': string,
     'created_at': string,
     'updated_at': string,
@@ -100,7 +101,7 @@ export interface GetListPhatoFialed {
 
 export interface GetItemsListSuccessAction {
     type: PhotosConst.GET_LIST_ITEMS_PHTOS_SUCCESS;
-    payload: PhotosItem[];
+    payload: PhtosShape[];
 }
 
 
@@ -117,7 +118,7 @@ export interface GetItemsListByQueryFieldAction {
 
 export interface GetItemsListByQuerySuccessAction {
     type: PhotosConst.GET_LIST_ITEM_PHTOS_SUCCESS;
-    payload: PhotosItem[] | PhotosItem;
+    payload: PhtosShape[] | PhtosShape;
 }
 
 

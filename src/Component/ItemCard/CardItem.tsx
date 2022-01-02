@@ -1,13 +1,13 @@
+import { PhtosShape } from '@types';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getPhats } from '../../redux/photos/photos.actions';
+import { getPhats } from 'Redux/photos/photos.actions';
+import { PhotosItem } from 'Redux/photos/photos.types';
 import { Row, Column, Image, Typography } from '../widget/styles';
 import { ButtonWithIcons } from './ButtonWithSvg';
 import { ButtonWedgiewrapperBottom, ButtonWithImage, ButtonWithImageWrapper, ButtonWithImageWrapperText, ImageContainerContent, ImageLogo, UserNmae, WrapperImage, WrapperImageColumn, WrapperTopItem } from './CardItem.styles';
 interface Props {
-  imageBackGround?: string;
-  imageIconsAlt?: string;
-  imageIcons?: string;
+  item:PhtosShape
 }
 
 const LikeSvg = (
@@ -21,22 +21,16 @@ const PlusSvg = (
   </svg>
 );
 
-export const CardItem = ({ imageBackGround, ...props }: Props) => {
+export const CardItem = ({ item }: Props) => {
   const [show, setshow] = useState<boolean>(false);
-  // const handleClick = () => {
-  //   console.log('clicked');
-  // };
-  // const [page, setPage] = useState<number>(1);
+  const handleClick = () => {
+    console.log('clicked');
+  };
 
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //  dispatch(getPhats(1));
-  //  dispatch(getPhats(2));
-  // }, [dispatch]);
-  return (
+  console.log('item', item.urls.thumb);
+    return (
     <WrapperImage>
-      <ImageContainerContent imag="https://images.unsplash.com/photo-1640767549157-7cbdb00ab8a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-      onMouseEnter={() => setshow(true)} onMouseLeave={() => setshow(false)}>
+      <ImageContainerContent imag={`${item.urls.thumb}?w=248&fit=crop&auto=format`} onMouseEnter={() => setshow(true)} onMouseLeave={() => setshow(false)}>
         {show && (
           <WrapperImageColumn>
             <WrapperTopItem>
@@ -46,8 +40,11 @@ export const CardItem = ({ imageBackGround, ...props }: Props) => {
             <ButtonWedgiewrapperBottom>
               <ButtonWithImageWrapper>
                 <ImageLogo
-                  src="https://images.unsplash.com/profile-1638212144583-a96726613b23image?dpr=1&auto=format&fit=crop&w=32&h=32&q=60&crop=faces&bg=fff"
                   className="imag_log"
+                  src={'https://images.unsplash.com/photo-1623852990731-472e0d1b047f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max?w=248&fit=crop&auto=format'}
+                  srcSet={'https://images.unsplash.com/photo-1623852990731-472e0d1b047f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max?w=248&fit=crop&auto=format&dpr=2 2x'}
+                  alt={item.id}
+                  loading="lazy"
                 />
                 <ButtonWithImageWrapperText>
                   <UserNmae className="userNmae">ssssssss</UserNmae>

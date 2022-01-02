@@ -1,4 +1,4 @@
-import { SECRET_KEY, ACCESS_KEY } from './../../Const/env';
+import { ACCESS_KEY } from './../../Const/env';
 import { AxiosResponse } from 'axios';
 import { Dispatch } from 'react';
 import { PhotosConst } from './photos.const';
@@ -11,7 +11,7 @@ import { TState } from 'redux/Store';
 
 export const getPhats = (page = 1): ((dispatch: Dispatch<GetItemsListsActions>, getState:()=>TState) => Promise<void>) =>
   async (dispatch: Dispatch<GetItemsListsActions>, getState:()=>TState) => {
-    console.log('test1');
+    // console.log('test1');
     try {
       dispatch({
         type: PhotosConst.GET_LIST_ITEMS_PHTOS_START,
@@ -20,17 +20,17 @@ export const getPhats = (page = 1): ((dispatch: Dispatch<GetItemsListsActions>, 
 
 
 
-      console.log('test2');
+      // console.log('test2');
 
       const response: AxiosResponse = await axiosIntance.get(`/photos/?client_id=${ACCESS_KEY}&page=${page}`);
-      console.log('response', response.data);
-      console.log('test3');
+      // console.log('response', response.data);
+      // console.log('test3');
 
       const oldState = getState().photos.items.item;
 
       dispatch({
         type: PhotosConst.GET_LIST_ITEMS_PHTOS_SUCCESS,
-        payload: [...oldState, response.data],
+        payload: [...oldState, ...response.data],
       });
     } catch (e: any) {
       dispatch({
@@ -44,7 +44,7 @@ export const getPhats = (page = 1): ((dispatch: Dispatch<GetItemsListsActions>, 
 
 export const serchPHAOTO = (page = 1, query = 'office', isCollections = false, isUser:false): ((dispatch: Dispatch<GetItemsListActions>) => Promise<void>) =>
   async (dispatch: Dispatch<GetItemsListActions>) => {
-    console.log('test1');
+    // console.log('test1');
     try {
       dispatch({
         type: PhotosConst.GET_LIST_ITEM_PHTOS_START,

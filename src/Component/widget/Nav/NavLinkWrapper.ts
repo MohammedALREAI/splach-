@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Row } from '../Row';
 
 export const NavLinkWrapper = styled('nav')`
+  align-items: center;
   background-color: #fff;
   display: flex;
   left: 0;

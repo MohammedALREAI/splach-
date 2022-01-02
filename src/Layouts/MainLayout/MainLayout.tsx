@@ -1,45 +1,48 @@
 import { useMediaQuery } from '@mui/material';
-import { Image, Layout } from './styled';
-import { CardItem } from '../../Component/ItemCard/CardItem';
+import { useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
+import { getPhats } from '../../redux/photos/photos.actions';
+import { GetItemsListsActions } from 'Redux/photos/photos.types';
+import { TState } from 'Redux/Store';
+import { Layout } from './styled';
+import { CardItem } from 'Component/ItemCard/CardItem';
 
 interface ImageType {
   img: string;
   title: string;
 }
-interface Props {
-  images: ImageType[];
-}
 
-const MainLayout = ({ images }: Props) => {
+const MainLayout = () => {
   const isMeduim = useMediaQuery('(max-width: 950px)');
   const isSmall = useMediaQuery('(max-width: 650px)');
+  const dispatch = useDispatch<ThunkDispatch<TState, any, GetItemsListsActions>>();
+  const [page, setpage] = useState<number>(1);
+  const items = useSelector((state: TState) => state.photos.items.item);
+
+  useEffect(() => {
+    dispatch(getPhats(page));
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [dispatch, page]);
+
+  const handleScroll = () => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 700) {
+      setpage(page + 1);
+    }
+  };
 
   return (
-    <>
-      <Layout variant="masonry" cols={isSmall ? 1 : isMeduim ? 2 : 3} gap={15}>
-        {/*
-          Below can you make mapping on the photos
-        */}
-        <CardItem />
-        <CardItem />
-        <CardItem />
-        <CardItem />
-        <CardItem />
-        <CardItem />
-        <CardItem />
-        <CardItem />
-        <CardItem />
-
-        {/* {images.map((item) => (
-          <Image
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            alt={item.title}
-            loading="lazy"
-          />
-        ))} */}
-      </Layout>
-    </>
+    <Layout variant="masonry" cols={isSmall ? 1 : isMeduim ? 2 : 3} gap={15}>
+      {items.map((item) => (
+        <>
+          <CardItem item={item} key={item.id} />
+        </>
+      ))}
+    </Layout>
   );
 };
 export default MainLayout;
