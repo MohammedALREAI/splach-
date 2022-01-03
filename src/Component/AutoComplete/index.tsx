@@ -1,75 +1,90 @@
-import { TextField, Autocomplete, InputAdornment, Box } from '@mui/material';
-import { Search } from '@mui/icons-material';
-
-interface Iprops {
-    bR:string,
-    width: string,
+import { memo, useRef, useState } from 'react';
+import {
+  ChoicesWrapper,
+  StyledAutoComplete,
+  Wrapper,
+} from './styled.style';
+import { useHistory } from 'react-router-dom';
+interface IProps {
+  data: string[];
+  value?: string;
+  onChange?: Function;
+  name: string;
+  placeholder?: string;
+  bR?:string;
+  width?:string
 }
 
-export default function AutoComplete({ bR, width }:Iprops) {
-  const options = topFilms.map((option) => {
-    const firstLetter = option.name.toUpperCase();
-    return {
-      firstLetter: /[0-9]/.test(firstLetter) ? 't' : firstLetter,
-      ...option,
-    };
-  });
+ function AutoComplete({ data, onChange, value, placeholder, name, bR, width }: IProps) {
+  const [state, setstate] = useState<string>('');
+  const [openChoices, setOpenChoices] = useState<boolean>(false);
+  const [Choices, setChoices] = useState<string[]>([...data]);
+ const navigate = useHistory();
+  const ref = useRef<HTMLDivElement>(null);
+
+  const handleClickChoice = (item: string) => {
+    setstate(item);
+    setOpenChoices(false);
+  };
+
+  const handleSearchItem = (e:React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+     console.log('Enter', e.key);
+      navigate.push(`/photos/${state}`);
+    }
+  };
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setstate(e.target.value);
+    setChoices(data.filter((item) => item.includes(e.target.value)));
+    setstate(e.target.value);
+  };
+
+  const handleFocusInput = () => {
+    setOpenChoices(true);
+  };
+
+  const checkIfClickedOutside = (e: MouseEvent) => {
+    if (
+      ref.current !== null &&
+      e.target !== null &&
+      ref.current.contains(e.target as any)
+    // eslint-disable-next-line no-empty
+    ) {
+    } else {
+      setOpenChoices(false);
+    }
+  };
+
+  document.addEventListener('mousedown', checkIfClickedOutside);
 
   return (
-    <Autocomplete
-      sx={{ width: { width }, borderRadius: { bR } }}
-      freeSolo
-      groupBy={(option: any) => option.firstLetter}
-      getOptionLabel={(option: any) => option.title}
-      options={topFilms}
-      renderOption={(props, option) => (
-        <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
-          {option.title}
-        </Box>
+    <Wrapper width={width} ref={ref}>
+      <StyledAutoComplete
+        onChange={handleChangeInput}
+        value={state}
+        placeholder={placeholder}
+        onFocus={handleFocusInput}
+        name={name}
+        bR={bR}
+        onKeyUp={(e) => handleSearchItem(e)}
+
+
+      />
+      {Choices.length > 0 && (
+        <ChoicesWrapper openChoices={openChoices}>
+          {Choices.map((item, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                handleClickChoice(item);
+              }}
+            >
+              {item}
+            </button>
+          ))}
+        </ChoicesWrapper>
       )}
-      renderInput={(params: any) => (
-        <TextField
-          {...params}
-          placeholder="Search photos"
-          InputProps={{
-            ...params.InputProps,
-            type: 'search',
-            startAdornment: (
-              <InputAdornment position="start">
-                <Search />
-              </InputAdornment>
-            ),
-          }}
-        />
-      )}
-    />
+    </Wrapper>
   );
 }
-
-const topFilms = [
-  {
-    title: 'The Shawshank Redemption',
-    year: 1994,
-    name: 'trending',
-  },
-  {
-    title: 'The Godfather',
-    year: 1972,
-    name: '1trending',
-  },
-  {
-    title: 'The Godfather: Part II',
-    year: 1974,
-    name: 'grending',
-  },
-  {
-    title: 'The Dark Knight',
-    year: 2008,
-    name: 'frending',
-  },
-  {
-    title: '12 Angry Men',
-    year: 1957,
-    name: '2rending',
-  },
-];
+export default memo(AutoComplete);

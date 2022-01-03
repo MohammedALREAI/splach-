@@ -1,42 +1,55 @@
+import { PhtosShape } from '@types';
+import { CardItem } from 'Component/ItemCard/CardItem';
+import { Tags } from 'Component/Tabgs/Tags';
+
 import { itemData } from 'utils/Constants';
-import { Button, ButtonsRow, Layout, LayoutContainer, LayoutItem } from './styled';
+import { Button, ButtonsRow, Layout, LayoutItem, Wrraper } from './styled';
 
-interface LayoutItemData {
-  img: string,
-  title: string
-}
+
 interface Props{
-  ImageData: LayoutItemData[]
+  ImageData:any;
+  title:string
 }
-const SearchLayout = ({ ImageData }: Props) => {
+const SearchLayout = ({ ImageData, title }: Props) => {
   return (
-    <LayoutContainer>
-      <h1> Christmas tree : title</h1>
+    <Wrraper>
+       <h1>{title}</h1>
+       {console.log(ImageData)}
       <ButtonsRow>
-      {
-          // eslint-disable-next-line array-callback-return
-          ImageData.map(it => <Button>{it.title}</Button>)
-        }
-      </ButtonsRow>
 
-      <Layout>
-        {/* Mapping on ImageData to show Item Layout */}
-        {
-          // eslint-disable-next-line array-callback-return
-          ImageData.map(it => {
-            console.log(it.title);
-          })
-        }
-        <LayoutItem />
-        <LayoutItem />
-        <LayoutItem />
-        <LayoutItem />
-        <LayoutItem />
-        <LayoutItem />
-        <LayoutItem />
-        <LayoutItem />
-      </Layout>
-    </LayoutContainer>
+{/* {for (let index1 = 0; index1 < ImageData.length; index++) {
+  for (let index = 0; index < ImageData[index].tags; index++) {
+    const element = array[index];
+
+  }
+  const element = array[index];
+
+} */}
+
+
+{/* ImageData.length > 0 && ImageData.map((item:any) => (
+  {item.tags.map((tag:any)=>
+    <Tags title={tag.title} />
+
+    )}
+))} */}
+       </ButtonsRow>
+        <Layout>
+{ImageData.length > 0 && ImageData.map((item:any) => (
+  <CardItem item={item} />
+))}
+
+
+         {/* <LayoutItem />
+         <LayoutItem />
+         <LayoutItem />
+         <LayoutItem />
+         <LayoutItem />
+         <LayoutItem />
+         <LayoutItem />
+         <LayoutItem /> */}
+       </Layout>
+    </Wrraper>
   );
 };
 

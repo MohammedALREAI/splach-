@@ -3,10 +3,19 @@ import { Typography } from 'Component/widget/Typography';
 import styled from 'styled-components';
 
 export const WrapperImage = styled('div')`  
-  height: 100%;
-  margin-bottom: 15px ;
-  max-width: 300px;
-  width: 100%;
+  cursor: pointer;
+    height: 250px;
+    margin: 10px;
+    position: relative;
+    text-align: center;
+    width: auto;
+  
+`;
+export const Img = styled('img')`
+  background-position: center;
+  
+    object-fit: contain;
+    width: 100%;
 `;
 
 export const ButtonWedgiewrapperBottom = styled('div')`  
@@ -17,16 +26,18 @@ export const ButtonWedgiewrapperBottom = styled('div')`
   transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
 `;
 export const WrapperImageColumn = styled('div')`  
-
+bottom: calc(100%);
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
-
+position: absolute;
+    right: calc(5%);
+    transitionDuration: 300ms;
    
-transitionDuration: 300ms;
+transitionProperty: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
 
-  transitionProperty: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  width: 91%;
 
 &:hover {
     backgroundColor:rgba(14, 14, 14, 0.07);

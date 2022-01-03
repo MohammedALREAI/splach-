@@ -1,11 +1,12 @@
 import { PhtosShape } from '@types';
+import BasiModal from 'pages/model';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getPhats } from 'Redux/photos/photos.actions';
 import { PhotosItem } from 'Redux/photos/photos.types';
 import { Row, Column, Image, Typography } from '../widget/styles';
 import { ButtonWithIcons } from './ButtonWithSvg';
-import { ButtonWedgiewrapperBottom, ButtonWithImage, ButtonWithImageWrapper, ButtonWithImageWrapperText, ImageContainerContent, ImageLogo, UserNmae, WrapperImage, WrapperImageColumn, WrapperTopItem } from './CardItem.styles';
+import { Img, ButtonWedgiewrapperBottom, ButtonWithImage, ButtonWithImageWrapper, ButtonWithImageWrapperText, ImageContainerContent, ImageLogo, UserNmae, WrapperImage, WrapperImageColumn, WrapperTopItem } from './CardItem.styles';
 interface Props {
   item:PhtosShape
 }
@@ -23,14 +24,21 @@ const PlusSvg = (
 
 export const CardItem = ({ item }: Props) => {
   const [show, setshow] = useState<boolean>(false);
+  const [isOpen, setIsopen] = useState<boolean>(false);
   const handleClick = () => {
-    console.log('clicked');
+    setIsopen(!isOpen);
   };
 
-  console.log('item', item.urls.thumb);
+
     return (
-    <WrapperImage>
-      <ImageContainerContent imag={`${item.urls.thumb}?w=248&fit=crop&auto=format`} onMouseEnter={() => setshow(true)} onMouseLeave={() => setshow(false)}>
+    <WrapperImage onClick={handleClick} >
+       <Img
+       onMouseEnter={() => setshow(true)} onMouseLeave={() => setshow(false)}
+       src={`${item.urls.full}?w=248&fit=crop&auto=format`}
+
+        alt={'title'}
+        loading="lazy"
+            />
         {show && (
           <WrapperImageColumn>
             <WrapperTopItem>
@@ -63,7 +71,9 @@ export const CardItem = ({ item }: Props) => {
             </ButtonWedgiewrapperBottom>
           </WrapperImageColumn>
         )}
-      </ImageContainerContent>
+  {isOpen &&
+  <BasiModal item={item} isOpen={isOpen} />
+  }
     </WrapperImage>
   );
 };

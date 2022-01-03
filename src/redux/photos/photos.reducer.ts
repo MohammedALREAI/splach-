@@ -13,7 +13,7 @@ interface IState{
 
     },
     item:{
-        item:PhtosShape[] | PhtosShape,
+        item:any[] | any,
         isLoading: boolean,
         error: string,
     }

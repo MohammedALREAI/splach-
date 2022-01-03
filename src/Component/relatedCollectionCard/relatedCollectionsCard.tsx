@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import BasicButtons from 'Component/Button/Button';
+// import  BasicButtons  from 'Component/Button/Button';
 import { Link } from 'react-router-dom';
 
 export default function RelatedCollectionsCard() {
@@ -65,8 +65,8 @@ export default function RelatedCollectionsCard() {
         <Typography sx={{ color: '#767676', fontSize: '14px', margin: '0 0 12px' }}>
           {'wored'} . Curated by {<Link to="/">{'text'}</Link>}
         </Typography>
-        <BasicButtons to="/">click</BasicButtons> <BasicButtons to="/">click</BasicButtons>{' '}
-        <BasicButtons to="/">click</BasicButtons>
+        {/* <BasicButtons to="/">click</BasicButtons> <BasicButtons to="/">click</BasicButtons>{' '} */}
+        {/* <BasicButtons to="/">click</BasicButtons> */}
       </Box>
     </Grid>
   );

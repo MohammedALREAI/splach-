@@ -1,7 +1,14 @@
 import styled from 'styled-components';
 
+export const Wrraper = styled.div`
+  margin: 100px auto;
+  width: 80%;
+  &:h1{
+display: flex;
+  }
+`;
 export const Layout = styled.div`
-    background-color: bisque;
+    
     display: grid;
     gap: 15px;
     grid-template-columns: repeat(4, 1fr);

@@ -14,7 +14,11 @@ const Banner = () => {
                         <Typography as={'a'}>freely-usable images.</Typography>
                     </UnsplashTitleSub>
                     <Typography as={'b'}>Powered by creators everywhere</Typography>
-                    <AutoComplete bR='10px' width='100%' />
+                    <AutoComplete
+                    bR="7px"
+                    placeholder="Search..."
+                     name="autoComplete"
+                    data={[]} />
                     <Typography as={'p'}>Trinding: Map on api triding </Typography>
                 </Container>
             </BannerSection>

@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import BasicButtons from 'Component/Button/Button';
+// import BasicButtons from 'Component/Button/Button';
 
 export default function Tags() {
   return (
@@ -11,9 +11,9 @@ export default function Tags() {
       >
         Related tags
       </Typography>
-      <BasicButtons to="/">one</BasicButtons>
+      {/* <BasicButtons to="/">one</BasicButtons>
       <BasicButtons to="/">two</BasicButtons>
-      <BasicButtons to="/">two</BasicButtons>
+      <BasicButtons to="/">two</BasicButtons> */}
     </Box>
   );
 }

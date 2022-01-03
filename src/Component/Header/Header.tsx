@@ -15,7 +15,12 @@ export const Header = ({}) => {
           <Logo src={logo} alt="logo  image" />
         </NavLink>
         <NavLinkCustom>
-          <AutoComplete width="1200px" bR="2" />
+          <AutoComplete
+          width="770px"
+            bR="20px"
+             placeholder="Search..."
+               name="autoComplete"
+                    data={[]} />
         </NavLinkCustom>
         <Row JC="flex-start">
         <NavLinkCustom>EXplore</NavLinkCustom>

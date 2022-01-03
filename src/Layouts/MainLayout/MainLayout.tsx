@@ -24,11 +24,11 @@ const MainLayout = () => {
     };
   }, [dispatch, page]);
 
-  const handleScroll = () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 700) {
+  const handleScroll = useCallback(() => {
+    if (window.innerHeight + window.scrollY >= document.documentElement.offsetHeight) {
       setpage(page + 1);
     }
-  };
+  }, [page, dispatch]);
 
   return (
     <Layout variant="masonry" cols={isSmall ? 1 : isMeduim ? 2 : 3} gap={15}>

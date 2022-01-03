@@ -1,4 +1,4 @@
-import { ButtonWithIcons } from 'Component/ItemCard/ButtonF';
+// import { ButtonWithIcons } from 'Component/ItemCard/ButtonF';
 import { Column } from 'Component/widget/Column';
 import { Row } from 'Component/widget/Row';
 import InfoIcon from '@mui/icons-material/Info';
@@ -8,7 +8,7 @@ export default function ImageDetails() {
   return (
     <Row>
       <Row>
-        <ButtonWithIcons
+        {/* <ButtonWithIcons
           icon={
             <Row>
               <InfoIcon />
@@ -24,7 +24,7 @@ export default function ImageDetails() {
             </Row>
           }
         />
-        <ButtonWithIcons icon={<MoreHorizIcon />} />
+        <ButtonWithIcons icon={<MoreHorizIcon />} /> */}
       </Row>
       <Row>
         <Column>
