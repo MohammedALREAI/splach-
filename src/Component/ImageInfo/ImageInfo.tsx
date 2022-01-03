@@ -54,5 +54,5 @@ export const ImageInfo = () => {
                 </Popover>
             </Row>
         </Row>
-    )
-}
+    );
+};

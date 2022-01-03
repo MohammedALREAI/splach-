@@ -15,6 +15,11 @@ export const Layout = styled.div`
     }
 `;
 
+export const LayoutContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
 export const ButtonsRow = styled.button`
     background: none;
     border: none;
