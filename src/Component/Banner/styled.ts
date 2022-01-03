@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Image from '../../assets/background.jpg';
+import Image from '../../Assets/background.jpg';
 
 export const BannerSection = styled.div`
     

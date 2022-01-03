@@ -8,11 +8,6 @@ import { TState } from 'Redux/Store';
 import { Layout } from './styled';
 import { CardItem } from 'Component/ItemCard/CardItem';
 
-interface ImageType {
-  img: string;
-  title: string;
-}
-
 const MainLayout = () => {
   const isMeduim = useMediaQuery('(max-width: 950px)');
   const isSmall = useMediaQuery('(max-width: 650px)');
@@ -38,9 +33,7 @@ const MainLayout = () => {
   return (
     <Layout variant="masonry" cols={isSmall ? 1 : isMeduim ? 2 : 3} gap={15}>
       {items.map((item) => (
-        <>
           <CardItem item={item} key={item.id} />
-        </>
       ))}
     </Layout>
   );

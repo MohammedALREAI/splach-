@@ -3,7 +3,8 @@ import { Typography } from 'Component/widget/Typography';
 import styled from 'styled-components';
 
 export const WrapperImage = styled('div')`  
-  height: 20rem;
+  height: 100%;
+  margin-bottom: 15px ;
   max-width: 300px;
   width: 100%;
 `;
